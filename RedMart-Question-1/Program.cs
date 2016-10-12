@@ -29,14 +29,14 @@ namespace RedMart_Question_1
             {
                 var tuple = DepthSearch(node);
 
-                if (tuple.Item1 >= longestPathLength)
+                if (tuple.Item1 > longestPathLength)
                 {
                     longestPathLength = tuple.Item1;
-
-                    if (tuple.Item2 > deepestDrop)
-                    {
-                        deepestDrop = tuple.Item2;
-                    }
+                    deepestDrop = tuple.Item2;
+                }
+                else if (tuple.Item1 == longestPathLength && tuple.Item2 > deepestDrop)
+                {
+                    deepestDrop = tuple.Item2;
                 }
             }
             stopwatch.Stop();
@@ -66,16 +66,16 @@ namespace RedMart_Question_1
                 }
                 else
                 {
-                    if (tuple.Item1 >= length)
+                    var tempDrop = rootNode.Value - tuple.Item2.Value;
+
+                    if (tuple.Item1 > length)
                     {
                         length = tuple.Item1;
-
-                        var tempDrop = rootNode.Value - tuple.Item2.Value;
-
-                        if (tempDrop > drop)
-                        {
-                            drop = tempDrop;
-                        }
+                        drop = tempDrop;
+                    }
+                    else if (tuple.Item1 == length && tempDrop > drop)
+                    {
+                        drop = tempDrop;
                     }
 
                 }
