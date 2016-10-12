@@ -16,10 +16,10 @@ The first line (4 4) indicates that this is a 4x4 map. Each number represents th
 
 On this particular map the longest path down is of length=5 and it’s highlighted in bold below: 9-5-3-2-1.
 
-4 4 
-4 8 7 3 
-2 5 9 3 
-6 3 2 5 
+4 4  
+4 8 7 3  
+2 5 9 3  
+6 3 2 5  
 4 4 1 6
 
 There is another path that is also length five: 8-5-3-2-1. However the tie is broken by the first path being steeper, dropping from 9 to 1, a drop of 8, rather than just 8 to 1, a drop of 7.
